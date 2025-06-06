@@ -1,0 +1,56 @@
+{
+  "faqs": [
+    {
+      "tool": "Paytm",
+      "steps": [
+        "Open Paytm app",
+        "Tap on 'Send Money'",
+        "Enter mobile number or scan QR code",
+        "Enter amount",
+        "Tap 'Send'"
+      ]
+    },
+    {
+      "tool": "Google Pay",
+      "steps": [
+        "Open Google Pay",
+        "Select contact or enter number",
+        "Enter amount",
+        "Choose payment method",
+        "Tap 'Pay'"
+      ]
+    }
+  ],
+  "tutorials": [
+    {
+      "tool": "WhatsApp",
+      "steps": [
+        "Open the chat where you want to send photo",
+        "Tap on the 📷 Camera icon",
+        "Click or select photo from gallery",
+        "Tap on 'Send' icon"
+      ]
+    },
+    {
+      "tool": "Google Maps",
+      "steps": [
+        "Open Google Maps app",
+        "Search the location",
+        "Tap on 'Directions'",
+        "Choose travel mode",
+        "Tap 'Start' to begin navigation"
+      ]
+    },
+    {
+      "tool": "Paytm",
+      "steps": [
+        "Open Paytm app",
+        "Go to 'Recharge & Pay Bills'",
+        "Select the utility (e.g. Electricity)",
+        "Enter account details",
+        "Tap on 'Proceed to Pay'"
+      ]
+    }
+  ]
+}
+

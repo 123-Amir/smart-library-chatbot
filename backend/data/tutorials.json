@@ -1,0 +1,48 @@
+[
+  {
+    "tool": "WhatsApp",
+    "steps": [
+      "Open WhatsApp",
+      "Open chat of the contact",
+      "Tap the camera or attachment icon",
+      "Choose or click photo",
+      "Tap Send"
+    ]
+  },
+  {
+    "tool": "Google Maps",
+    "steps": [
+      "Open Google Maps",
+      "Search location",
+      "Tap Directions",
+      "Choose route and tap Start"
+    ]
+  },
+  {
+    "tool": "Paytm",
+    "steps": [
+      "Open Paytm",
+      "Tap 'Send Money'",
+      "Enter mobile number or UPI ID",
+      "Enter amount and tap Send"
+    ]
+  },
+  {
+    "tool": "PhonePe",
+    "steps": [
+      "Open PhonePe",
+      "Select 'To Contact' or 'To Account'",
+      "Enter number and amount",
+      "Tap Send"
+    ]
+  },
+  {
+    "tool": "YouTube",
+    "steps": [
+      "Open YouTube",
+      "Search video using search bar",
+      "Tap the video to play",
+      "Use like, comment, and share buttons"
+    ]
+  }
+]

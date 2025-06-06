@@ -1,0 +1,22 @@
+[
+  {
+    "question": "What is WhatsApp?",
+    "answer": "WhatsApp is a free messaging app that lets you send messages, make voice/video calls, and share media."
+  },
+  {
+    "question": "How to recharge mobile using Paytm?",
+    "answer": "Open Paytm > Tap on 'Recharge & Bill Payments' > Enter your number > Choose plan > Pay."
+  },
+  {
+    "question": "What is Google Maps?",
+    "answer": "Google Maps is a navigation app used to find locations and directions."
+  },
+  {
+    "question": "What is UPI?",
+    "answer": "UPI (Unified Payments Interface) allows instant money transfer using a mobile number or UPI ID."
+  },
+  {
+    "question": "How to share location on WhatsApp?",
+    "answer": "Open chat > Tap on attachment > Tap on Location > Share your live or current location."
+  }
+]
