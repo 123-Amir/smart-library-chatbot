@@ -70,14 +70,21 @@ function sendMessage() {
   }
 }
 
-// Add messages to the chat box
-function addMessage(text, sender = "bot") {
-  const chatBox = document.getElementById("chat-box");
-  const msgDiv = document.createElement("div");
-  msgDiv.className = sender;
-  msgDiv.innerText = text;
-  chatBox.appendChild(msgDiv);
-  chatBox.scrollTop = chatBox.scrollHeight;
+// chatbot.js
+
+function sendMessage() {
+  const input = document.getElementById("user-input");
+  const msg = input.value.trim();
+  if (msg === "") return;
+
+  // Display user message
+  addMessage(`🧑 You: ${msg}`, "user");
+
+  // Clear input
+  input.value = "";
+
+  // Get bot reply
+  handleBotReply(msg);
 }
 
 
