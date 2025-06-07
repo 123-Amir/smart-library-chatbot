@@ -1,3 +1,27 @@
+// Add a message to the chat window
+function addMessage(text, sender = "bot") {
+  const msgDiv = document.createElement("div");
+  msgDiv.className = sender === "user" ? "user-msg" : "bot-msg";
+  msgDiv.innerText = text;
+
+  const chatBox = document.getElementById("chat-messages");
+  chatBox.appendChild(msgDiv);
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+// When user clicks "Send" button
+function sendMessage() {
+  const input = document.getElementById("user-input");
+  const msg = input.value.trim();
+  if (msg === "") return;
+
+  addMessage(`🧑 You: ${msg}`, "user");
+  input.value = "";
+
+  handleBotReply(msg);
+}
+
+// Handle bot response based on user input
 async function handleBotReply(message) {
   try {
     const msg = message.toLowerCase();
@@ -51,40 +75,13 @@ async function handleBotReply(message) {
       }
     }
 
-    // --- Default Fallback ---
+    // --- Fallback Message ---
     addMessage("🤖 I can help with WhatsApp, Paytm, and Google Maps.\nTry asking things like:\n• How to send money using Paytm?\n• WhatsApp photo tutorial\n• Use Google Maps");
 
   } catch (err) {
     addMessage("⚠️ Oops! Something went wrong.");
+    console.error("Bot Error:", err);
   }
-}
-// Append user message and send to bot
-function sendMessage() {
-  const input = document.getElementById("user-input");
-  const message = input.value.trim();
-
-  if (message !== "") {
-    addMessage(message, "user");
-    handleBotReply(message); // uses the function you've already written
-    input.value = "";
-  }
-}
-
-// chatbot.js
-
-function sendMessage() {
-  const input = document.getElementById("user-input");
-  const msg = input.value.trim();
-  if (msg === "") return;
-
-  // Display user message
-  addMessage(`🧑 You: ${msg}`, "user");
-
-  // Clear input
-  input.value = "";
-
-  // Get bot reply
-  handleBotReply(msg);
 }
 
 
