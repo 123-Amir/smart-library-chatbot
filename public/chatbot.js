@@ -3,50 +3,55 @@ async function handleBotReply(message) {
     const msg = message.toLowerCase();
     const BASE_URL = "https://smart-library-chatbot.onrender.com";
 
-    const res = await fetch(`${BASE_URL}/api/data`);
-    const data = await res.json();
-
-    // Tutorials
-    const tutorials = data.tutorials;
-    const faqs = data.faqs;
-
-    // WhatsApp Photo Tutorial
-    if (msg.includes('whatsapp') && msg.includes('photo')) {
+    // --- Tutorials: WhatsApp ---
+    if (msg.includes('whatsapp') || msg.includes('photo')) {
+      const res = await fetch(`${BASE_URL}/api/tutorials`);
+      const tutorials = await res.json();
       const wa = tutorials.find(t => t.tool.toLowerCase() === 'whatsapp');
+
       if (wa) {
-        addMessage(`📸 WhatsApp Photo Tutorial:\n${wa.steps.map((s, i) => `${i + 1}. ${s}`).join('\n')}`);
+        addMessage(`📸 How to send photo on WhatsApp:\n${wa.steps.map((s, i) => `${i + 1}. ${s}`).join('\n')}`);
         return;
       }
     }
 
-    // Google Maps Tutorial
+    // --- Tutorials: Google Maps ---
     if (msg.includes('google maps') || msg.includes('map')) {
-      const gm = tutorials.find(t => t.tool.toLowerCase() === 'google maps');
-      if (gm) {
-        addMessage(`🗺️ Google Maps Tutorial:\n${gm.steps.map((s, i) => `${i + 1}. ${s}`).join('\n')}`);
+      const res = await fetch(`${BASE_URL}/api/tutorials`);
+      const tutorials = await res.json();
+      const maps = tutorials.find(t => t.tool.toLowerCase() === 'google maps');
+
+      if (maps) {
+        addMessage(`🗺️ How to use Google Maps:\n${maps.steps.map((s, i) => `${i + 1}. ${s}`).join('\n')}`);
         return;
       }
     }
 
-    // Paytm Usage
+    // --- Tutorials: Paytm ---
     if (msg.includes('paytm') && (msg.includes('send') || msg.includes('money') || msg.includes('recharge') || msg.includes('use'))) {
-      const ptm = tutorials.find(t => t.tool.toLowerCase() === 'paytm');
-      if (ptm) {
-        addMessage(`💰 Paytm Tutorial:\n${ptm.steps.map((s, i) => `${i + 1}. ${s}`).join('\n')}`);
+      const res = await fetch(`${BASE_URL}/api/tutorials`);
+      const tutorials = await res.json();
+      const paytm = tutorials.find(t => t.tool.toLowerCase() === 'paytm');
+
+      if (paytm) {
+        addMessage(`💰 How to use Paytm:\n${paytm.steps.map((s, i) => `${i + 1}. ${s}`).join('\n')}`);
         return;
       }
     }
 
-    // FAQs (optional)
-    if (msg.includes('whatsapp') || msg.includes('paytm') || msg.includes('upi') || msg.includes('location') || msg.includes('google maps')) {
-      const foundFaq = faqs.find(f => msg.includes(f.question.toLowerCase().split(' ')[0]));
-      if (foundFaq) {
-        addMessage(`❓ ${foundFaq.question}\n✅ ${foundFaq.answer}`);
+    // --- FAQs: Paytm ---
+    if (msg.includes('paytm') && !msg.includes('send') && !msg.includes('money') && !msg.includes('recharge') && !msg.includes('use')) {
+      const res = await fetch(`${BASE_URL}/api/faqs`);
+      const faqs = await res.json();
+      const paytm = faqs.find(f => f.tool.toLowerCase() === 'paytm');
+
+      if (paytm) {
+        addMessage(`📱 ${paytm.tool} Info:\n${paytm.steps.map((s, i) => `${i + 1}. ${s}`).join('\n')}`);
         return;
       }
     }
 
-    // Fallback
+    // --- Default fallback ---
     addMessage("🤖 I can help with WhatsApp, Paytm, and Google Maps.\nTry asking things like:\n• How to send money using Paytm?\n• WhatsApp photo tutorial\n• Use Google Maps");
 
   } catch (err) {
@@ -73,6 +78,7 @@ function addMessage(text, sender = "bot") {
   chat.appendChild(msgEl);
   chat.scrollTop = chat.scrollHeight;
 }
+
 
 
 
