@@ -3,18 +3,22 @@ const router = express.Router();
 const path = require('path');
 const fs = require('fs');
 
-const dataPath = path.join(__dirname, '../data/data.json');
+// Path to data.json
+const dataFile = path.join(__dirname, '../data/data.json');
 
+// GET /api/data
 router.get('/', (req, res) => {
-  fs.readFile(dataPath, 'utf8', (err, jsonData) => {
+  fs.readFile(dataFile, 'utf8', (err, data) => {
     if (err) {
-      return res.status(500).json({ error: 'Failed to load data' });
+      console.error('Error reading data.json:', err);
+      return res.status(500).json({ error: 'Failed to read data.json' });
     }
 
     try {
-      const data = JSON.parse(jsonData);
-      res.json(data);
+      const jsonData = JSON.parse(data);
+      res.json(jsonData);
     } catch (e) {
+      console.error('Invalid JSON format:', e);
       res.status(500).json({ error: 'Invalid JSON format' });
     }
   });
