@@ -1,34 +1,35 @@
 {
   "faqs": [
     {
-      "tool": "Paytm",
-      "steps": [
-        "Open Paytm app",
-        "Tap on 'Send Money'",
-        "Enter mobile number or scan QR code",
-        "Enter amount",
-        "Tap 'Send'"
-      ]
+      "question": "What is WhatsApp?",
+      "answer": "WhatsApp is a free messaging app that lets you send messages, make voice/video calls, and share media."
     },
     {
-      "tool": "Google Pay",
-      "steps": [
-        "Open Google Pay",
-        "Select contact or enter number",
-        "Enter amount",
-        "Choose payment method",
-        "Tap 'Pay'"
-      ]
+      "question": "How to recharge mobile using Paytm?",
+      "answer": "Open Paytm > Tap on 'Recharge & Bill Payments' > Enter your number > Choose plan > Pay."
+    },
+    {
+      "question": "What is Google Maps?",
+      "answer": "Google Maps is a navigation app used to find locations and directions."
+    },
+    {
+      "question": "What is UPI?",
+      "answer": "UPI (Unified Payments Interface) allows instant money transfer using a mobile number or UPI ID."
+    },
+    {
+      "question": "How to share location on WhatsApp?",
+      "answer": "Open chat > Tap on attachment > Tap on Location > Share your live or current location."
     }
   ],
   "tutorials": [
     {
       "tool": "WhatsApp",
       "steps": [
+        "Open WhatsApp",
         "Open the chat where you want to send photo",
-        "Tap on the 📷 Camera icon",
-        "Click or select photo from gallery",
-        "Tap on 'Send' icon"
+        "Tap the camera or attachment icon",
+        "Choose or click photo",
+        "Tap Send"
       ]
     },
     {
@@ -45,12 +46,40 @@
       "tool": "Paytm",
       "steps": [
         "Open Paytm app",
-        "Go to 'Recharge & Pay Bills'",
-        "Select the utility (e.g. Electricity)",
-        "Enter account details",
-        "Tap on 'Proceed to Pay'"
+        "Tap 'Send Money'",
+        "Enter mobile number or UPI ID",
+        "Enter amount and tap Send"
+      ]
+    },
+    {
+      "tool": "Google Pay",
+      "steps": [
+        "Open Google Pay",
+        "Select contact or enter number",
+        "Enter amount",
+        "Choose payment method",
+        "Tap 'Pay'"
+      ]
+    },
+    {
+      "tool": "PhonePe",
+      "steps": [
+        "Open PhonePe",
+        "Select 'To Contact' or 'To Account'",
+        "Enter number and amount",
+        "Tap Send"
+      ]
+    },
+    {
+      "tool": "YouTube",
+      "steps": [
+        "Open YouTube",
+        "Search video using search bar",
+        "Tap the video to play",
+        "Use like, comment, and share buttons"
       ]
     }
   ]
 }
+
 
