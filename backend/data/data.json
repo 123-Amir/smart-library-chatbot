@@ -81,5 +81,21 @@
     }
   ]
 }
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "Digital India Basics",
+      "author": "Govt of India"
+    },
+    {
+      "id": "2",
+      "title": "Using Paytm",
+      "author": "Digital India Mission"
+    }
+  ],
+  "faqs": [...],
+  "tutorials": [...]
+}
 
 
