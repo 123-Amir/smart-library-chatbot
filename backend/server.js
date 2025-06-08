@@ -4,6 +4,8 @@ const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const dataRoute = require('./routes/data');
+app.use('/api/data', dataRoute);
 
 // Middlewares
 app.use(cors());
