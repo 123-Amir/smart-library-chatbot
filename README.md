@@ -1,3 +1,4 @@
+Live : https://vercel.com/123-amirs-projects/smart-library-chatbot-a5gz
 # 📚 Smart Digital Library Assistant (Chatbot + REST API)
 
 A full-stack project combining a **RESTful Library/Inventory API** with a **Smart Chatbot Assistant** to promote digital literacy. Users can query how to use apps like **Paytm**, **WhatsApp**, and **Google Maps** via step-by-step tutorials and FAQs.
